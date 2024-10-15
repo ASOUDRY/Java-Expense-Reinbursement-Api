@@ -21,13 +21,24 @@ public class User {
     @Column(name="password")
     private String password = "";
 
+    @Column(name="email")
+    private String email = "";
+
     @Column(name="Role")
     private Boolean manager = false;
 
-    public User(String username, String password) {
+    public User(String username, String password, String email) {
         this.id = UUID.randomUUID().toString();
         this.username = username;
         this.password = password;
+        this.email = email;
+    }
+
+    public User() {
+        this.id = UUID.randomUUID().toString();
+        this.username = "John";
+        this.password = "Snow";
+        this.email = "WindsofWinter";
     }
     
 }
