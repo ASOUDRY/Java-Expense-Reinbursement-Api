@@ -5,5 +5,5 @@ import com.soudry.expense_reimbursement.entities.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, String> {
-    
+    User findByUsernameAndPassword(String username, String password);
 }
