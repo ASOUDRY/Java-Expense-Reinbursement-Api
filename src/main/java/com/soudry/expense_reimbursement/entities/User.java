@@ -40,5 +40,15 @@ public class User {
         this.password = "Snow";
         this.email = "WindsofWinter";
     }
+
+    public String getUsername() {
+        return this.username;
+    }
+    public String getPassword() {
+        return this.password;
+    }
+    public String getEmail() {
+        return this.email;
+    }
     
 }
