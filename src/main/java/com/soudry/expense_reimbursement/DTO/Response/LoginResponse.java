@@ -1,4 +1,4 @@
-package com.soudry.expense_reimbursement.DTO;
+package com.soudry.expense_reimbursement.DTO.Response;
 
 public class LoginResponse {
 

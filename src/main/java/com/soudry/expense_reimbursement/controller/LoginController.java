@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.soudry.expense_reimbursement.DTO.LoginRequest;
-import com.soudry.expense_reimbursement.DTO.LoginResponse;
+import com.soudry.expense_reimbursement.DTO.Request.LoginRequest;
+import com.soudry.expense_reimbursement.DTO.Response.LoginResponse;
 import com.soudry.expense_reimbursement.services.LoginService;
 
 @RestController

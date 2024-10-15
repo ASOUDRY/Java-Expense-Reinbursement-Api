@@ -3,7 +3,7 @@ package com.soudry.expense_reimbursement.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.soudry.expense_reimbursement.DTO.RegistrationResponse;
+import com.soudry.expense_reimbursement.DTO.Response.RegistrationResponse;
 import com.soudry.expense_reimbursement.entities.User;
 import com.soudry.expense_reimbursement.repository.UserRepository;
 

@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.soudry.expense_reimbursement.DTO.RegistrationRequest;
-import com.soudry.expense_reimbursement.DTO.RegistrationResponse;
+import com.soudry.expense_reimbursement.DTO.Request.RegistrationRequest;
+import com.soudry.expense_reimbursement.DTO.Response.RegistrationResponse;
 import com.soudry.expense_reimbursement.services.RegistrationService;
 
 @RestController
