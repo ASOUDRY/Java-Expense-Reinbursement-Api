@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.soudry.expense_reimbursement.DTO.Request.TicketRequest;
+import com.soudry.expense_reimbursement.DTO.Response.TicketResponse;
 import com.soudry.expense_reimbursement.services.TicketService;
 
 @RestController

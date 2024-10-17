@@ -1,5 +1,6 @@
 package com.soudry.expense_reimbursement.entities;
 
+import java.util.UUID;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -26,5 +27,35 @@ public class Ticket {
 
     @Column
     private Boolean handled = false;
-    
+
+    public Ticket(User user, String issue, double amount) {
+        this.ticketId = UUID.randomUUID().toString();
+        this.submittedBy = user;
+        this.issue = issue;
+        this.amountToBeReinbursed = amount;
+    }
+
+    public Ticket() {
+        
+    }
+
+    public String getTicketId() {
+        return this.ticketId;
+    };
+
+    public User getsubmittedBy() {
+        return this.submittedBy;
+    };
+
+    public String getIssue() {
+        return this.issue;
+    };
+
+    public double getAmountToBeReinbursed() {
+       return this.amountToBeReinbursed;
+    };
+
+    public Boolean getHandled() {
+        return this.handled;
+    };
 }
