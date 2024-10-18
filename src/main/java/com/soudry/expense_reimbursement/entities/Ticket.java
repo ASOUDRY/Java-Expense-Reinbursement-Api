@@ -28,6 +28,9 @@ public class Ticket {
     @Column
     private Boolean handled = false;
 
+    @Column
+    private Boolean approved = false;
+
     public Ticket(User user, String issue, double amount) {
         this.ticketId = UUID.randomUUID().toString();
         this.submittedBy = user;
