@@ -1,6 +1,8 @@
 package com.soudry.expense_reimbursement.services;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,5 +36,13 @@ public class TicketService {
         } else {
             return null;
         }
-    }   
+    }
+    
+    public List<TicketResponse> getUserTickets(String username) {
+        User user = userRepo.findByUsername(username);
+        List<Ticket> listOfTickets = ticketRepo.findAllBySubmittedBy(user);
+          List<TicketResponse> convertedTickets = listOfTickets.stream().map(ticket -> new TicketResponse(ticket))
+            .collect(Collectors.toList());
+        return convertedTickets;
+    }
 }
