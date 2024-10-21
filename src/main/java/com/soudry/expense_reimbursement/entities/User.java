@@ -50,5 +50,8 @@ public class User {
     public String getEmail() {
         return this.email;
     }
+    public Boolean getRole() {
+        return this.manager;
+    }
     
 }
