@@ -61,4 +61,27 @@ public class Ticket {
     public Boolean getHandled() {
         return this.handled;
     };
+
+    public void setSubmittedBy(User submittedBy) {
+        this.submittedBy = submittedBy;
+    }
+    
+    public void setIssue(String issue) {
+        this.issue = issue;
+    }
+    
+    public void setAmountToBeReimbursed(Double amountToBeReimbursed) {
+        this.amountToBeReinbursed = amountToBeReimbursed;
+    }
+    
+    public void setHandled(Boolean handled) {
+        this.handled = handled;
+    }
+
+    public void setApproved(Boolean approved) {
+        this.approved = approved;
+    };
+    public Boolean getApproved() {
+        return this.approved;
+    }
 }

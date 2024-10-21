@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.soudry.expense_reimbursement.DTO.PatchUpdate;
 import com.soudry.expense_reimbursement.DTO.Request.TicketRequest;
 import com.soudry.expense_reimbursement.DTO.Response.TicketResponse;
 import com.soudry.expense_reimbursement.repository.TicketRepository;
@@ -44,5 +45,28 @@ public class TicketService {
           List<TicketResponse> convertedTickets = listOfTickets.stream().map(ticket -> new TicketResponse(ticket))
             .collect(Collectors.toList());
         return convertedTickets;
+    }
+
+    public Ticket patchTicket(PatchUpdate update) {
+        Ticket currentTicket = ticketRepo.findById(update.getTicketId()).get();
+        currentTicket = compareTickets(update, currentTicket);
+        ticketRepo.save(currentTicket);
+        return currentTicket;
+    }
+
+    private Ticket compareTickets(PatchUpdate update, Ticket ticket) {
+        if (update.getIssue() != null) {
+            ticket.setIssue(update.getIssue());
+        }
+        if (update.getAmountToBeReimbursed() != null) {
+            ticket.setAmountToBeReimbursed(update.getAmountToBeReimbursed());
+        }
+        if (update.getHandled() != null) {
+            ticket.setHandled(update.getHandled());
+        }
+        if (update.getApproved()!= null) {
+            ticket.setApproved(update.getApproved());
+        }
+        return ticket;
     }
 }
