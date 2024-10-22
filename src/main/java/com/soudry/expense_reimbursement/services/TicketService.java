@@ -51,6 +51,7 @@ public class TicketService {
         Ticket currentTicket = ticketRepo.findById(update.getTicketId()).get();
         currentTicket = compareTickets(update, currentTicket);
         ticketRepo.save(currentTicket);
+        System.out.println(currentTicket.getAmount());
         return currentTicket;
     }
 
@@ -58,8 +59,8 @@ public class TicketService {
         if (update.getIssue() != null) {
             ticket.setIssue(update.getIssue());
         }
-        if (update.getAmountToBeReimbursed() != null) {
-            ticket.setAmountToBeReimbursed(update.getAmountToBeReimbursed());
+        if (update.getAmount() != null) {
+            ticket.setAmount(update.getAmount());
         }
         if (update.getHandled() != null) {
             ticket.setHandled(update.getHandled());

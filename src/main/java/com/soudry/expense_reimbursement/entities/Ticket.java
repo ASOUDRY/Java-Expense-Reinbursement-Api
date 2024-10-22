@@ -23,7 +23,7 @@ public class Ticket {
     private String issue = "";
 
     @Column
-    private double amountToBeReinbursed = 0.00;
+    private double amount = 0.00;
 
     @Column
     private Boolean handled = false;
@@ -35,7 +35,7 @@ public class Ticket {
         this.ticketId = UUID.randomUUID().toString();
         this.submittedBy = user;
         this.issue = issue;
-        this.amountToBeReinbursed = amount;
+        this.amount = amount;
     }
 
     public Ticket() {
@@ -54,8 +54,8 @@ public class Ticket {
         return this.issue;
     };
 
-    public double getAmountToBeReinbursed() {
-       return this.amountToBeReinbursed;
+    public double getAmount() {
+       return this.amount;
     };
 
     public Boolean getHandled() {
@@ -70,8 +70,8 @@ public class Ticket {
         this.issue = issue;
     }
     
-    public void setAmountToBeReimbursed(Double amountToBeReimbursed) {
-        this.amountToBeReinbursed = amountToBeReimbursed;
+    public void setAmount(Double amount) {
+        this.amount = amount;
     }
     
     public void setHandled(Boolean handled) {

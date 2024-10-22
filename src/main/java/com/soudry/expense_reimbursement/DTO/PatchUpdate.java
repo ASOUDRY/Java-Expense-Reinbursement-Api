@@ -3,7 +3,7 @@ package com.soudry.expense_reimbursement.DTO;
 public class PatchUpdate {
     private String ticketId = null;
     private String issue = null;
-    private Double amountToBeReimbursed = null;  // Corrected to Double instead of double, as primitives cannot be null.
+    private Double amount = null;  // Corrected to Double instead of double, as primitives cannot be null.
     private Boolean handled = null;
     private Boolean approved = null;
 
@@ -24,12 +24,12 @@ public class PatchUpdate {
         this.issue = issue;
     }
 
-    public Double getAmountToBeReimbursed() {
-        return amountToBeReimbursed;
+    public Double getAmount() {
+        return amount;
     }
 
-    public void setAmountToBeReimbursed(Double amountToBeReimbursed) {
-        this.amountToBeReimbursed = amountToBeReimbursed;
+    public void setAmountToBeReimbursed(Double amount) {
+        this.amount = amount;
     }
 
     public Boolean getHandled() {
