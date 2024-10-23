@@ -36,7 +36,7 @@ public class SecurityConfig {
         }
 
         @Bean
-        public SecurityFilterChain securityFilterChain(HttpSecurity http, JwtAuthenticationEntryPoint authenticationEntryPoint) throws Exception {
+        public SecurityFilterChain securityFilterChain(HttpSecurity http, JwtAuthenticationEntryPoint authenticationEntryPoint, AuthorizationDenied authorizationDenied) throws Exception {
             http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests((authorizeHttpRequests) ->
                     authorizeHttpRequests
@@ -46,7 +46,7 @@ public class SecurityConfig {
                         .anyRequest().permitAll()
                 )
                 .exceptionHandling(exceptionHandling -> 
-                    exceptionHandling.authenticationEntryPoint(authenticationEntryPoint)
+                    exceptionHandling.authenticationEntryPoint(authenticationEntryPoint).accessDeniedHandler(authorizationDenied)
                 )
                 .sessionManagement((sessionManagment) -> sessionManagment.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
