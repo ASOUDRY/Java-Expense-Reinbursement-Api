@@ -16,7 +16,7 @@ public class Ticket {
     private String ticketId = "";
 
     @ManyToOne
-    @JoinColumn(name = "userId")
+    @JoinColumn(name = "username")
     private User submittedBy;
 
     @Column

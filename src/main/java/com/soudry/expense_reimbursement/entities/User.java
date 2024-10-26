@@ -3,9 +3,6 @@ package com.soudry.expense_reimbursement.entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
-import java.util.UUID;
-
 import jakarta.persistence.Column;;
 
 @Entity
@@ -13,9 +10,6 @@ import jakarta.persistence.Column;;
 public class User {
 
     @Id
-    private String userId;
-
-    @Column(name="username")
     private String username = "";
 
     @Column(name="password")
@@ -28,17 +22,13 @@ public class User {
     private Boolean manager = false;
 
     public User(String username, String password, String email) {
-        this.userId = UUID.randomUUID().toString();
         this.username = username;
         this.password = password;
         this.email = email;
     }
 
     public User() {
-        this.userId = UUID.randomUUID().toString();
-        this.username = "John";
-        this.password = "Snow";
-        this.email = "WindsofWinter";
+       
     }
 
     public String getUsername() {
@@ -53,9 +43,7 @@ public class User {
     public Boolean getRole() {
         return this.manager;
     }
-
     public void setRole(Boolean role) {
         this.manager = role;
-    }
-    
+    }  
 }
