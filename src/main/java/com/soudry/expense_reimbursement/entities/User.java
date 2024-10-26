@@ -53,5 +53,9 @@ public class User {
     public Boolean getRole() {
         return this.manager;
     }
+
+    public void setRole(Boolean role) {
+        this.manager = role;
+    }
     
 }

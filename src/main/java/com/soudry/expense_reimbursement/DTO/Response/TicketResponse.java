@@ -12,7 +12,7 @@ public class TicketResponse {
 
     public TicketResponse(Ticket ticket) {
         this.issue = ticket.getIssue();
-        this.amount = ticket.getAmountToBeReinbursed();
+        this.amount = ticket.getAmount();
         this.submittedBy = ticket.getsubmittedBy();
         this.handled = ticket.getHandled();  
     }
