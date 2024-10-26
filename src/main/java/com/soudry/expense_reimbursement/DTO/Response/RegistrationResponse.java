@@ -14,10 +14,6 @@ public class RegistrationResponse {
     }
 
     public RegistrationResponse() {
-        this.username = "John";
-        this.password = "Snow";
-        this.email = "WindsofWinter";
-        this.manager = true;
     }
 
     public String getUsername() {
