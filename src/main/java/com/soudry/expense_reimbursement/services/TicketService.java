@@ -40,7 +40,7 @@ public class TicketService {
     }
     
     public List<TicketResponse> getUserTickets(String username) {
-        User user = userRepo.findByUsername(username);
+        User user = userRepo.findById(username).get();
         List<Ticket> listOfTickets = ticketRepo.findAllBySubmittedBy(user);
           List<TicketResponse> convertedTickets = listOfTickets.stream().map(ticket -> new TicketResponse(ticket))
             .collect(Collectors.toList());

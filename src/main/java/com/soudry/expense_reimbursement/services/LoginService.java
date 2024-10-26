@@ -34,9 +34,8 @@ public class LoginService {
     }
 
     public LoginResponse login(LoginRequest request) {
-        // User user = userRepo.findByUsernameAndPassword(request.getUsername(), request.getPassword());
         String jwt = this.authenticationLogic(request.getUsername(), request.getPassword());
-        User user = userRepo.findByUsername(request.getUsername());
+        User user = userRepo.findById(request.getUsername()).get();
         LoginResponse response = new LoginResponse(user.getUsername(), user.getPassword(), user.getEmail(), jwt);
         return response;
     }

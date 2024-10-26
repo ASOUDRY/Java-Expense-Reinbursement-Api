@@ -30,7 +30,7 @@ public class AdminService {
       }
 
       public void promoteUser(String username) {
-        User user = userRepo.findByUsername(username);
+        User user = userRepo.findById(username).get();
         user.setRole(true);
         userRepo.save(user);
       }
